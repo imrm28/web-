@@ -1,5 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+/* Минималистичный Reset CSS */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+ul[role='list'], ol[role='list'] {
+  list-style: none;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 body {
   margin: 0 auto;
   background-size: cover;    
@@ -19,7 +68,7 @@ img {
   width: 100%;
 }
 .container {
-  max-width: 1400px;
+  max-width: 1440px;
   width: 100%;
   padding: 0 16px;
   margin: 0 auto;
@@ -76,6 +125,7 @@ header nav ul li a {
 
 }
 nav ul li a {
+  font-size: 22px;
   position: relative;
   text-decoration: none;
   color: #333;
@@ -98,13 +148,11 @@ header nav ul li.btn a:hover {
 }
 .hero {
   padding-bottom: 100px;
-  position: relative;
-  
+  display: flex;
 }
 .hero-info {
   margin: 0;
-  padding: 0;
-  width: 620px;
+  padding: 5px;
 }
 .hero-info nav ul {
   font-size: 18px;
@@ -114,6 +162,7 @@ header nav ul li.btn a:hover {
   font-weight: 500;
   gap: 7px;
   padding: 0;
+  padding-bottom: 10px;
   margin: 0;
 }
 .hero-info nav ul li a {
@@ -128,11 +177,14 @@ header nav ul li.btn a:hover {
   right: 0;
   top: 0;
 }
-.hero-info article .fire {
+.hero-info article  {
+  
+}
+.fire {
+  background-color: #E4585D;
   display: inline-flex;
   align-items: center;   
-  gap: 4px;
-  background-color: #E4585D;
+  gap: 4px; 
   color: white;
   margin-left: 10px;
   padding: 7px 10px;
@@ -157,7 +209,9 @@ header nav ul li.btn a:hover {
   font-family: 'Inter', sans-serif;
   font-weight: 400; 
   padding-top: 2px;
-
+}
+.ahero {
+  font-size: 22px;
 }
 .ratings {
   margin-top: 0;
@@ -228,16 +282,30 @@ header nav ul li.btn a:hover {
   cursor: pointer;
   transform: scale(1.1);
 }
+.alert-containerflex {
+  background-color: #F7F7FC;
+  display: flex;
+  align-items: center;
+  width: 362px;
+  height: 152px;
+  padding: 5px;
+}
+.alert-containerflex1 {
+  font-size: 36px;
+  display: flex;
+  flex-direction: column;
+}
 .hero .alert-container {
+  display: flex;
+  align-items: center;
   width: 362px;
   height: 152px;
   background-color: #F7F7FC;
   border-radius: 4px;
-  position: absolute;
   right: 10px;
   top: 10px;
 }
-.hero .alert-container .alert-text { 
+.hero .alert-container { 
   width: 307px;
   height: 96px;
   font-family: 'Inter', sans-serif;
@@ -249,31 +317,31 @@ header nav ul li.btn a:hover {
   padding-bottom: 20px;
 
 }
-.hero .alert-container img {
-  position: absolute;
-  padding-top: 45px;
-  padding-left: 19px;
+.alert-text {
+  padding-left: 7px;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
 }
 .video-container {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0;
-  padding-top: 40px;
+  padding-top: 90px;
   padding-left: 0px;
 }
 .liders {
-  margin-top: 40px;
-  position: absolute;
-  right: 0; 
-  width: 393px;
-  height: 413px;
+  width: 100%;
+  max-width: 393px;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 4px;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700; 
   background-color: #F7F7FC;
   color: #E4585D;
+  box-sizing: border-box;
 }
 
 .samutai1, .samutai2,
@@ -303,9 +371,10 @@ header nav ul li.btn a:hover {
 }
 .kurs {
   padding-bottom: 40px;
+  gap: 9px;
 }
 .kurs-info nav ul {
-  width: 640px;
+  top: 30px;
   height: 29px;
   font-size: 18px;
   list-style: none;
@@ -371,10 +440,11 @@ header nav ul li.btn a:hover {
   font-weight: 500;
 }
 .kurs .planv {
+  margin-top: 20px;
   width: 787px;
-  height: 125px;
   background-color: #F7F7FC;
   border-radius: 5px;
+  padding-bottom: 20px;
 }
 .kurs .planv h4 {
   font-size: 24px;
@@ -445,6 +515,502 @@ header nav ul li.btn a:hover {
   font-size: 14px;
   color: #64617A;
 }
+.kurs .planv2 {
+  margin-top: 40px;
+  width: 787px;
+  background-color: #F7F7FC;
+  border-radius: 5px;
+  padding-bottom: 20px;
+}
+
+main {
+  display: block;
+  min-height: 100vh;
+}
+.footer {
+  margin-top: 100px;
+}
+.footer {
+  background-color: #14142B;
+  color: #fff;
+  padding: 60px 0 30px;
+}
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.footer-logo {
+  flex: 0 0 auto;
+}
+.footer-logo img {
+  display: block;
+}
+.footer-columns {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.footer-column h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-column ul li {
+  margin-bottom: 10px;
+}
+.footer-column ul li a {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-column ul li a:hover {
+  color: #E4585D;
+}
+.footer-btn {
+  background-color: #E4585D;
+  color: #fff;
+  border: none;
+  padding: 10px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 10px;
+}
+.footer-btn:hover {
+  background-color: #FF3239;
+}
+.footer-social {
+  display: flex;
+  flex-direction: row; /* ← теперь В РЯД */
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+@media(max-width: 1200px) {
+
+  .welcome-main-pic {
+    max-width: 320px;
+  }
+  .welcome-absolute{
+    max-width: 1200px;
+    top: 25%;
+  }
+
+  .welcome-text-cont h1 {
+    font-size: 30px;
+  }
+
+  .welcome-text-cont p {
+    font-size: 16px;
+  }
+
+  .conteiner {
+    max-width: 800px;
+  }
+
+  .welcome-background {
+    background-position-x: 100px;
+    background-size: 250px;
+  }
+
+  .welcome-content {
+    gap: 20px;
+  }
+
+  .courses-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .feedback-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ninja{
+    grid-column: span 2;
+  }
+
+  .feedback-card {
+    min-width: 280px;
+  }
+
+  .starter {
+    margin-left: -30px;
+  }
+
+  .uzumaki{
+    max-width: 80px;
+    height: auto;
+  }
+
+  .marker-photo{
+    height: 30px;
+    width: auto;
+  }
+
+  .temple-content{
+    gap: 25px;
+  }
+
+  .temple-photo {
+    width: 300px;
+    height: auto;
+  }
+
+  .temple-el_left h1{
+    font-size: 18px;
+  }
+
+  .temple-el_left p{
+    font-size: 14px;
+  }
+
+  .temple-el_right h1{
+    font-size: 18px;
+  }
+
+  .temple-element{
+    gap: 10px;
+  }
+
+  .absolute-for-course{
+    padding-bottom: 60px;
+  }
+
+  .space-for-our_knowledge{
+    padding: 20px 0;
+  }
+  .knowledge-icon{
+    justify-content: start;
+    gap: 20px;
+  }
+
+  .feedback-from-students{
+    padding: 40px 0;
+  }
+
+  .feedback-header{
+    font-size: 30px;
+  }
+  .footer-navigation{
+    gap: 20px;
+  }
+  .background-to-courses{
+    width: 50%;
+    top: 24%;
+    bottom: auto;
+  }
+  .courses-welcome h1{
+    font-size: 60px;
+    margin-left: 25px;
+  }
+  .courses-right-side>img{
+    max-width: 300px;
+  }
+  .course-welcome-text{
+    max-width: 400px;
+  }
+  .about-welcome-header h1{
+    font-size: 28px;
+  }
+  .info-item{
+    font-size: 14px;
+  }
+  .video-reiting{
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "item1" 
+    "item3"
+    "item4"
+    "item2";
+  }
+  .tab-and-add-wrapper{
+    grid-column: span 1;
+  }
+  .video-frame{
+    grid-column: span 1;
+  }
+  .speaker-info{
+    grid-column: span 1;
+  }
+  .topping{
+    margin-top: 0px;
+  }
+}
+
+@media(max-width: 800px) {
+  .conteiner {
+    max-width: 600px;
+  }
+  .welcome-absolute{
+    max-width: 800px;
+    top: 50%;
+  }
+
+  .temple {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .temple-content {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .temple-photo-wrapper {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .welcome-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "image"
+      "btn";
+    gap: 20px;
+    padding-top: 30px;
+    justify-content: center ;
+  }
+
+  .next-btn {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .courses-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .starter{
+    margin-left: 0;
+  }
+
+  .feedback-cards{
+    grid-template-columns: 1fr;
+  }
+
+  .ninja{
+    grid-column: span 1;
+  }
+
+  .feedback-botton{
+    font-size: 16px;
+    padding: 12px 40px;
+  }
+  .footer-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+  .footer-content{
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+  }
+  .footer-logo{
+    align-self: center;
+    justify-self: center;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+  .footer-navigation{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+  .footer-feedback{
+    grid-row: 2 / 3;
+  }
+  .knowledge-icon{
+    justify-content: start;
+    gap: 20px;
+  }
+  .courses-welcome{
+    flex-direction: column;
+    gap: 30px;
+  }
+  .courses-welcome h1{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-left: 0px;
+  }
+  .course-welcome-text{
+    max-width: 100%;
+  }
+  .courses-right-side{
+    display: flex;
+  }
+  .background-to-courses{
+    width: 60%;
+    top: 12%;
+  }
+  .courses-welcome h1 {
+    margin-left: 20px;
+  }
+  .about-welcome-content{
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .about-welcome-right{
+    justify-content: start;
+  }
+  .speaker-list-item{
+    font-size: 14px;
+  }
+  .speaker-detailed-info {
+    max-width: 60%;
+  }
+  .about-welcome{
+    padding-top: 30px;
+  }
+  .about-welcome-left{
+    gap: 30px;
+  }
+  .info-item {
+    padding: 8px 12px;
+  }
+  .feedlink{
+    margin-top: 0;
+  }
+  .courses-bloock{
+    background-size: cover;
+    background-position: bottom;
+  }
+}
+
+@media(max-width: 480px) {
+  .conteiner{
+    max-width: 360px;
+    margin: 0 auto;
+  }
+  .welcome-content {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "image"
+      "btn";
+    gap: 20px;
+    padding-top: 30px;
+  }
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .footer-navigation{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-feedback{
+    align-items: center;
+  }
+  .footer-navigation{
+    padding: 20px 0;
+    border-top: 1px solid #EFF0F6;
+    border-bottom: 1px solid #EFF0F6;
+    width: 100%;
+  }
+  .login-btn{
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+  .right-side{
+    gap: 20px;
+  }
+  .temple {
+    padding-bottom: 60px;
+    gap: 20px;
+  }
+  .knowledge-icon{
+    justify-content: start;
+    gap: 20px;
+  }
+  .welcome-page{
+    background: none;
+  }
+  .common-sort{
+    margin-right: auto;
+  }
+  .common-item{
+    font-size: 14px;
+  }
+  .background-to-courses{
+    width: 100%;
+    top: 10%;
+  }
+  .about-welcome-content{
+    gap: 20px;
+  }
+  .speaker-list-item{
+    font-size: 14px;
+  }
+  .text-block {
+    max-width: 300px;
+  }
+  .speaker-skills{
+    max-width: 300px;
+  }
+  .speaker-skills img{
+    max-width: 100px;
+  }
+  .speaker-detailed-info {
+    max-width: 56%;
+  }
+  .remming {
+    font-size: 1.2em;
+  }
+  .about-welcome-content{
+    padding-top: 30px;
+  }
+  .detail-info{
+    gap: 10px;
+  }
+  .courses-about-main{
+    padding-bottom: 60px;
+  }
+  .course-main {
+    padding-bottom: 60px;
+  }
+  .feedback-header{
+    font-size: 24px;
+    margin-left: 10px;
+  }
+}
+
+
+
+
+
+
+
 
 
 
